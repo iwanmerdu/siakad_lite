@@ -1,0 +1,15 @@
+/* ===== CSS KUSTOM SIAKAD LITE ===== */
+
+/* Mengatur tampilan body halaman login */
+body {
+  /* Kita tidak menulis banyak CSS manual karena Bootstrap sudah menangani sebagian besar */
+  font-family: 'Segoe UI', sans-serif;
+  /* Mengganti font default browser dengan Segoe UI yang lebih rapi */
+}
+
+/* Menambahkan efek saat kursor hover di atas card */
+.card {
+  border-radius: 12px;
+  /* Membuat sudut card lebih melengkung */
+  /* Nilai 12px = cukup melengkung tapi tidak terlalu bulat */
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Deklarasi bahwa dokumen ini adalah HTML versi 5 -->
+
+<html lang="id">
+<!-- Tag pembuka HTML. lang="id" berarti bahasa konten adalah Indonesia -->
+
+<head>
+  <!-- Bagian head berisi informasi tentang halaman (tidak tampil di layar) -->
+
+  <meta charset="UTF-8">
+  <!-- Mengatur encoding karakter agar huruf seperti é, ñ, dan karakter Indonesia terbaca -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Perintah penting untuk tampilan responsif di HP -->
+  <!-- width=device-width: lebar halaman mengikuti lebar layar perangkat -->
+  <!-- initial-scale=1.0: tidak ada zoom awal saat halaman dibuka -->
+
+  <title>Login - SiAkad Lite</title>
+  <!-- Teks yang muncul di tab browser -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Mengambil file CSS Bootstrap 5 dari internet (CDN) -->
+  <!-- Ini menghubungkan semua class Bootstrap ke halaman kita -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Mengambil file CSS buatan kita sendiri -->
+
+</head>
+
+<body class="bg-light">
+<!-- Tag body: semua yang tampil di browser ada di sini -->
+<!-- class="bg-light" adalah class Bootstrap untuk background abu-abu muda -->
+
+  <!-- ===== BAGIAN UTAMA HALAMAN LOGIN ===== -->
+  <div class="container">
+    <!-- Container Bootstrap: membuat konten ada di tengah dengan margin otomatis -->
+    <!-- Lebar container mengikuti breakpoint (menyesuaikan layar) -->
+
+    <div class="row justify-content-center min-vh-100 align-items-center">
+      <!-- row: baris dalam sistem grid Bootstrap -->
+      <!-- justify-content-center: isi baris diposisikan di tengah secara horizontal -->
+      <!-- min-vh-100: tinggi minimal = 100% tinggi layar (vh = viewport height) -->
+      <!-- align-items-center: isi baris diposisikan di tengah secara vertikal -->
+
+      <div class="col-md-5">
+        <!-- col-md-5: kolom dengan lebar 5/12 pada layar medium ke atas -->
+        <!-- Artinya: di laptop/tablet, form login mengambil 5 kolom dari 12 -->
+        <!-- Di HP, otomatis menjadi full width -->
+
+        <!-- ===== KARTU LOGIN ===== -->
+        <div class="card shadow-sm">
+          <!-- card: komponen Bootstrap berupa kotak berisi konten -->
+          <!-- shadow-sm: bayangan tipis di bawah card -->
+
+          <div class="card-body p-4">
+            <!-- card-body: area isi dalam card -->
+            <!-- p-4: padding (jarak dalam) sebesar 4 satuan Bootstrap (sekitar 24px) -->
+
+            <!-- Judul form -->
+            <h4 class="card-title text-center mb-4">
+              <!-- card-title: styling judul untuk card -->
+              <!-- text-center: teks rata tengah -->
+              <!-- mb-4: margin bottom (jarak bawah) sebesar 4 satuan -->
+              🎓 SiAkad Lite
+            </h4>
+
+            <p class="text-center text-muted mb-4">Silakan masuk dengan akun Anda</p>
+            <!-- text-muted: warna teks abu-abu (untuk teks sekunder) -->
+
+            <!-- ===== FORM LOGIN ===== -->
+            <form id="formLogin">
+              <!-- id="formLogin": ID unik untuk form ini -->
+              <!-- Kita akan ambil form ini dengan JavaScript menggunakan ID-nya -->
+
+              <!-- Input NIM -->
+              <div class="mb-3">
+                <!-- mb-3: jarak bawah antar elemen form -->
+
+                <label for="inputNim" class="form-label">NIM</label>
+                <!-- label: keterangan untuk input -->
+                <!-- for="inputNim": menghubungkan label ke input dengan id yang sama -->
+                <!-- form-label: styling Bootstrap untuk label form -->
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputNim"
+                  placeholder="Contoh: 2024001"
+                  required
+                >
+                <!-- type="text": input teks biasa -->
+                <!-- form-control: styling Bootstrap untuk input (kotak rapi, full width) -->
+                <!-- id="inputNim": ID untuk dihubungkan ke label dan diambil JavaScript -->
+                <!-- placeholder: teks abu-abu petunjuk di dalam kotak input -->
+                <!-- required: field wajib diisi (validasi HTML bawaan) -->
+
+              </div>
+
+              <!-- Input Password -->
+              <div class="mb-3">
+
+                <label for="inputPassword" class="form-label">Password</label>
+
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Masukkan password"
+                  required
+                >
+                <!-- type="password": input yang karakternya disembunyikan (jadi bintang/titik) -->
+
+              </div>
+
+              <!-- Kotak pesan error (tersembunyi dulu) -->
+              <div id="pesanError" class="alert alert-danger d-none">
+                <!-- alert alert-danger: kotak pesan merah dari Bootstrap -->
+                <!-- d-none: class Bootstrap untuk menyembunyikan elemen (display: none) -->
+                <!-- Kita akan tampilkan kotak ini dengan JavaScript jika login gagal -->
+                NIM atau password salah!
+              </div>
+
+              <!-- Tombol Submit -->
+              <div class="d-grid">
+                <!-- d-grid: membuat tombol menjadi full width -->
+
+                <button type="submit" class="btn btn-primary">
+                  <!-- btn: class dasar untuk semua tombol Bootstrap -->
+                  <!-- btn-primary: warna biru (warna utama Bootstrap) -->
+                  <!-- type="submit": tombol ini akan mengirim/submit form -->
+                  Masuk
+                </button>
+
+              </div>
+            </form>
+            <!-- Akhir form login -->
+
+          </div>
+          <!-- Akhir card-body -->
+        </div>
+        <!-- Akhir card -->
+
+      </div>
+      <!-- Akhir col -->
+    </div>
+    <!-- Akhir row -->
+  </div>
+  <!-- Akhir container -->
+
+  <!-- ===== FILE JAVASCRIPT BOOTSTRAP ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- File JavaScript Bootstrap (untuk komponen interaktif seperti modal, dropdown) -->
+  <!-- Harus diletakkan SEBELUM MENUTUP tag body agar halaman dimuat lebih cepat -->
+
+  <!-- ===== FILE JAVASCRIPT KITA SENDIRI ===== -->
+  <script src="js/script.js"></script>
+  <!-- File JS kita diletakkan SETELAH Bootstrap JS -->
+  <!-- Urutan penting: Bootstrap JS dulu, baru kode kita -->
+
+</body>
+</html>
